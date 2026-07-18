@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「嘉茵頤縫」一次性可吸收釘皮內吻合器｜敏盛開刀房</title>
+<meta name="description" content="嘉茵頤縫 一次性可吸收釘皮內吻合器 產品簡報 — 禮康生物科技有限公司">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#122E2A;
+    --ink-soft:#4C605C;
+    --ink-faint:#7C8C89;
+    --paper:#F4F8F6;
+    --paper-card:#FFFFFF;
+    --teal-950:#0A2521;
+    --teal-900:#0D3833;
+    --teal-800:#0F5C56;
+    --teal-700:#166F65;
+    --teal-500:#1F9484;
+    --mint-200:#D8ECE5;
+    --mint-100:#E9F4EF;
+    --coral:#DE7455;
+    --coral-dark:#C05E42;
+    --line:#DCE7E2;
+    --line-strong:#C3D4CD;
+    --shadow: 0 20px 50px -25px rgba(15,54,49,.35);
+    --shadow-sm: 0 8px 20px -12px rgba(15,54,49,.3);
+    --serif: 'Noto Serif TC', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    overflow-x:hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection{ background: var(--coral); color:#fff; }
+
+  h1,h2,h3{ font-family: var(--serif); font-weight:700; letter-spacing:.02em; }
+
+  .slide{
+    position:relative;
+    min-height:100svh;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding: 7vh 8vw;
+    overflow:hidden;
+    scroll-margin-top:0;
+  }
+  .slide-inner{ position:relative; z-index:3; width:100%; max-width:1180px; margin:0 auto; }
+  .slide.dark{ background: linear-gradient(150deg,var(--teal-950) 0%, var(--teal-900) 45%, var(--teal-800) 100%); color:#fff; }
+  .slide.dark .eyebrow{ color: var(--mint-200); }
+  .slide.dark h1, .slide.dark h2{ color:#fff; }
+  .slide.dark p{ color: rgba(255,255,255,.82); }
+
+  /* ---------- decorative texture ---------- */
+  .bg-topo{ position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.5; }
+  .slide.dark .bg-topo{ opacity:.16; }
+  .bg-motif{ position:absolute; z-index:2; pointer-events:none; }
+
+  .grain{
+    position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- eyebrow / labels ---------- */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.6em;
+    font-size:.86rem; font-weight:600; letter-spacing:.28em;
+    color: var(--teal-700); text-transform:uppercase;
+    margin-bottom: 1.4em;
+  }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:currentColor; opacity:.6; }
+
+  p.lead{ font-size:clamp(1.08rem,1.5vw,1.32rem); line-height:1.9; color:var(--ink-soft); max-width:64ch; }
+  p{ font-size:1.02rem; }
+
+  /* ---------- nav dots ---------- */
+  .nav-dots{
+    position:fixed; right: clamp(14px,2.4vw,34px); top:50%; transform:translateY(-50%);
+    z-index:50; display:flex; flex-direction:column; gap:14px;
+  }
+  .nav-dots a{
+    width:9px; height:9px; border-radius:50%;
+    background: rgba(18,46,42,.22);
+    border:1px solid transparent;
+    display:block; position:relative; transition: all .35s ease;
+  }
+  .nav-dots a::after{
+    content: attr(data-label);
+    position:absolute; right:22px; top:50%; transform:translateY(-50%);
+    font-size:.72rem; white-space:nowrap; color:var(--ink);
+    background:var(--paper-card); padding:4px 10px; border-radius:20px;
+    box-shadow:var(--shadow-sm);
+    opacity:0; pointer-events:none; transition:opacity .2s ease; letter-spacing:.05em;
+  }
+  .nav-dots a:hover::after{ opacity:1; }
+  .nav-dots a.active{ background: var(--coral); width:9px; height:26px; border-radius:6px; }
+
+  /* ---------- progress ---------- */
+  .progress-rail{ position:fixed; left:0; top:0; height:3px; width:100%; z-index:60; background:transparent; }
+  .progress-rail i{ display:block; height:100%; width:0%; background: linear-gradient(90deg,var(--teal-700),var(--coral)); transition: width .15s linear; }
+
+  /* ---------- logo mark (fixed corner) ---------- */
+  .brandmark{
+    position:fixed; left: clamp(16px,2.4vw,34px); top: clamp(16px,2.4vw,30px); z-index:55;
+    display:flex; align-items:center; gap:10px; font-size:.72rem; letter-spacing:.18em; color:var(--ink-soft);
+    text-transform:uppercase; font-weight:600;
+    mix-blend-mode:normal;
+  }
+  .brandmark span.dot{ width:6px;height:6px;border-radius:50%; background:var(--coral); display:inline-block; }
+  .slide.dark ~ .brandmark, body.on-dark .brandmark{ color:#fff; }
+
+  /* ================= SLIDE 1 — TITLE ================= */
+  #s1{ align-items:center; text-align:left; }
+  #s1 .kicker{ font-family:var(--serif); font-size:1.05rem; color: var(--mint-200); letter-spacing:.06em; margin-bottom:.6em; }
+  #s1 h1{ font-size: clamp(2.8rem, 6.8vw, 5.5rem); line-height:1.14; color:#fff; max-width:15ch; }
+  #s1 h1 em{ font-style:normal; color: var(--coral); }
+  #s1 .org-row{ margin-top:3.2em; display:flex; flex-wrap:wrap; gap:2.6em 3.4em; }
+  #s1 .org-row .field{ font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--mint-200); margin-bottom:.5em; }
+  #s1 .org-row .val{ font-family:var(--serif); font-size:1.38rem; color:#fff; font-weight:600; }
+  #s1 .hero-motif-line{ position:absolute; right:2%; bottom:10%; width:min(34vw,440px); opacity:.7; }
+  #s1 .hero-photo{
+    position:absolute; right:6%; top:50%; transform:translateY(-50%) rotate(-6deg);
+    width:min(32vw,420px);
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,.45));
+  }
+  #s1 .hero-photo img{ width:100%; display:block; }
+  @media (max-width:900px){ #s1 .hero-photo{ display:none; } #s1 .hero-motif-line{ display:none; } }
+
+  /* ================= SLIDE 2 — 材質說明 ================= */
+  .grid-2{ display:grid; grid-template-columns: .92fr 1.3fr; gap: 4.5vw; align-items:start; }
+  @media (max-width: 880px){ .grid-2{ grid-template-columns:1fr; } }
+  .info-card{
+    background: var(--paper-card); border:1px solid var(--line); border-radius:18px;
+    padding: 1.7em 1.9em; box-shadow: var(--shadow-sm); margin-top:1.4em;
+  }
+  .info-card h3{ font-size:1.12rem; color:var(--teal-800); margin-bottom:.5em; }
+  .info-card p{ font-size:1.04rem; line-height:1.85; color:var(--ink-soft); }
+
+  table.compare{ width:100%; border-collapse:collapse; background:var(--paper-card); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-sm); }
+  table.compare caption{ text-align:left; font-size:.8rem; letter-spacing:.08em; color:var(--ink-faint); padding:1em 1.3em 0; }
+  table.compare th, table.compare td{ padding: 1em 1.3em; font-size:1.02rem; text-align:left; border-bottom:1px solid var(--line); }
+  table.compare thead th{ background: var(--teal-800); color:#fff; font-family:var(--serif); font-weight:600; font-size:.98rem; }
+  table.compare thead th:first-child{ border-top-left-radius:16px; }
+  table.compare thead th:last-child{ border-top-right-radius:16px; }
+  table.compare tbody th{ color:var(--ink-soft); font-weight:600; width:26%; background:var(--mint-100); }
+  table.compare tbody tr:last-child td, table.compare tbody tr:last-child th{ border-bottom:none; }
+  table.compare td.hl{ color:var(--teal-800); font-weight:700; }
+
+  /* ================= SLIDE 3 — benefits ================= */
+  .benefit-list{ display:flex; flex-direction:column; gap: 1.5em; margin-top:2em; }
+  .benefit{
+    display:grid; grid-template-columns: 108px 1fr; gap: 1.8em; align-items:center;
+    background:var(--paper-card); border:1px solid var(--line); border-radius:20px; padding:1.5em 1.7em;
+    box-shadow:var(--shadow-sm);
+  }
+  .benefit .num{ font-family:var(--serif); font-size:2.6rem; color:var(--mint-200); -webkit-text-stroke:1.4px var(--teal-700); color:transparent; font-weight:700; line-height:1; }
+  .benefit .thumb{ width:108px; height:108px; border-radius:14px; overflow:hidden; background:var(--mint-100); flex:none; }
+  .benefit .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .benefit .thumb.contain{ background:#fff; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; padding:.4em; }
+  .benefit .thumb.contain img{ object-fit:contain; width:100%; height:100%; }
+  .benefit.wide{ grid-template-columns: 190px 1fr; }
+  .benefit.wide .thumb{ width:190px; height:108px; }
+  @media (max-width:700px){ .benefit.wide{ grid-template-columns:110px 1fr; } .benefit.wide .thumb{ width:110px; height:72px; } }
+  .benefit h3{ font-size:1.26rem; color:var(--ink); margin-bottom:.35em; }
+  .benefit p{ font-size:1.03rem; color:var(--ink-soft); line-height:1.8; max-width:60ch; }
+  .benefit.stat .stat-num{ font-family:var(--serif); font-size:2.1rem; color:var(--coral); font-weight:700; }
+  @media (max-width:700px){ .benefit{ grid-template-columns:64px 1fr; } .benefit .thumb{ width:64px; height:64px; } }
+
+  /* ================= VIDEO SLIDES (4-7) ================= */
+  .video-layout{ display:grid; grid-template-columns: .95fr 1.15fr; gap:5vw; align-items:center; }
+  @media (max-width:900px){ .video-layout{ grid-template-columns:1fr; } }
+  .video-layout.reverse{ grid-template-columns: 1.15fr .95fr; }
+  @media (max-width:900px){ .video-layout.reverse{ grid-template-columns:1fr; } }
+  .video-layout.reverse .video-frame{ order:-1; }
+  .step-index{ font-family:var(--serif); font-size:5.2rem; font-weight:700; line-height:1; color: var(--mint-200); margin-bottom:.15em; }
+  .video-frame{
+    position:relative; border-radius:22px; overflow:hidden; box-shadow: var(--shadow);
+    border: 6px solid var(--paper-card); background:#000;
+  }
+  .video-frame video{ display:block; width:100%; height:auto; }
+  .video-frame.portrait{ max-width:320px; margin-inline:auto; }
+  .caption-tag{ display:inline-block; font-size:.86rem; letter-spacing:.1em; color:var(--teal-700); background:var(--mint-100); padding:.4em .9em; border-radius:20px; margin-top:1.4em; }
+
+  /* ================= SLIDE 8 — 禁忌症 ================= */
+  .contra-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap: 1em 1.6em; margin-top:2.2em; }
+  @media (max-width:760px){ .contra-grid{ grid-template-columns:1fr; } }
+  .contra-item{
+    display:flex; gap: .9em; align-items:flex-start;
+    background:var(--paper-card); border:1px solid var(--line); border-radius:14px; padding:1.1em 1.3em;
+  }
+  .contra-item .mark{ flex:none; width:26px; height:26px; border-radius:50%; background: rgba(222,116,85,.13); display:flex; align-items:center; justify-content:center; margin-top:.1em; }
+  .contra-item .mark svg{ width:12px; height:12px; }
+  .contra-item p{ font-size:1.02rem; color:var(--ink-soft); line-height:1.7; }
+  .contra-item p b{ color:var(--ink); font-weight:600; }
+  .contra-note{ margin-top:1.6em; font-size:.94rem; color:var(--ink-faint); border-left:2px solid var(--line-strong); padding-left:1em; line-height:1.8; max-width:70ch; }
+
+  /* ================= SLIDE 9 — 總結 ================= */
+  .summary-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.4em; margin-top:2em; }
+  @media (max-width:880px){ .summary-grid{ grid-template-columns:1fr; } }
+  .summary-card{ background:var(--paper-card); border-radius:18px; padding:1.7em 1.6em; box-shadow:var(--shadow-sm); border:1px solid var(--line); }
+  .summary-card .tag{ font-family:var(--serif); font-weight:700; font-size:1.06rem; color:var(--teal-800); margin-bottom:1em; display:flex; align-items:center; gap:.6em; }
+  .summary-card .tag .circ{ width:28px;height:28px;border-radius:50%; background:var(--mint-100); color:var(--teal-800); display:flex; align-items:center; justify-content:center; font-size:.85rem; font-weight:700; }
+  .summary-card ul{ list-style:none; display:flex; flex-direction:column; gap:.7em; }
+  .summary-card li{ font-size:.98rem; color:var(--ink-soft); line-height:1.65; padding-left:1.1em; position:relative; }
+  .summary-card li::before{ content:""; position:absolute; left:0; top:.55em; width:5px; height:5px; border-radius:50%; background:var(--coral); }
+
+  .feature-row{ display:flex; flex-wrap:wrap; gap:.7em; margin-top:2.4em; }
+  .feature-row span{ font-size:.9rem; background:var(--teal-800); color:#fff; padding:.55em 1.1em; border-radius:24px; letter-spacing:.03em; }
+
+  .s9-head{ text-align:left; }
+  .s9-bg-photo{
+    position:absolute; z-index:2; left:50%; top:52%; transform:translate(-50%,-50%);
+    width:min(680px,60vw); pointer-events:none;
+    opacity:.5; filter: grayscale(.35) sepia(.18) hue-rotate(120deg) saturate(1.4) drop-shadow(0 25px 40px rgba(15,54,49,.2));
+  }
+  .s9-bg-photo img{ width:100%; display:block; }
+
+  /* ================= SLIDE 10 — closing ================= */
+  #s10{ align-items:center; text-align:center; }
+  #s10 h2{ font-size:clamp(2.2rem,5vw,3.6rem); color:#fff; }
+  #s10 .sub{ margin-top:1em; color:rgba(255,255,255,.75); font-size:1.1rem; letter-spacing:.05em; }
+  #s10 .contact{ margin-top:3em; display:flex; gap:2.4em; justify-content:center; flex-wrap:wrap; }
+  #s10 .contact div{ text-align:left; }
+  #s10 .contact .k{ font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--mint-200); margin-bottom:.4em; }
+  #s10 .contact .v{ font-family:var(--serif); font-size:1.22rem; }
+
+  section#s2, section#s3, section#s8, section#s9{ background:var(--paper); }
+  section#s4, section#s6{ background: var(--mint-100); }
+  section#s5, section#s7{ background: var(--paper); }
+
+  .footer-index{ position:absolute; bottom:6vh; left:8vw; font-size:.72rem; letter-spacing:.15em; color:var(--ink-faint); }
+  .slide.dark .footer-index{ color:rgba(255,255,255,.5); }
+
+  @media (max-width:600px){
+    .slide{ padding: 12vh 6vw 8vh; }
+    .nav-dots{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-rail"><i id="progressBar"></i></div>
+<div class="brandmark"><span class="dot"></span> 嘉茵頤縫 · JIAYIN SUTURE</div>
+
+<nav class="nav-dots" id="navDots">
+  <a href="#s1" data-label="封面"></a>
+  <a href="#s2" data-label="材質說明"></a>
+  <a href="#s3" data-label="效益比較"></a>
+  <a href="#s4" data-label="操作原理"></a>
+  <a href="#s5" data-label="標準操作"></a>
+  <a href="#s6" data-label="臨床實例"></a>
+  <a href="#s7" data-label="較長傷口"></a>
+  <a href="#s8" data-label="禁忌症"></a>
+  <a href="#s9" data-label="總結"></a>
+  <a href="#s10" data-label="Thank You"></a>
+</nav>
+
+<main>
+
+<!-- ============ SLIDE 1 ============ -->
+<section class="slide dark" id="s1">
+  <svg class="bg-topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#1F9484"/>
+        <stop offset="1" stop-color="#0A2521"/>
+      </linearGradient>
+    </defs>
+    <g stroke="#EAF6F1" stroke-opacity="0.18" fill="none" stroke-width="1">
+      <path d="M-100,700 C 250,600 400,780 760,650 S 1300,520 1600,600"/>
+      <path d="M-100,780 C 250,680 400,860 760,730 S 1300,600 1600,680"/>
+      <path d="M-100,860 C 250,760 400,940 760,810 S 1300,680 1600,760"/>
+    </g>
+    <circle cx="1180" cy="180" r="260" fill="url(#g1)" opacity="0.25"/>
+  </svg>
+
+  <!-- signature motif: suture -> staple (small accent, kept subtle behind photo) -->
+  <svg class="hero-motif-line" viewBox="0 0 520 160" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#EAF6F1" stroke-opacity="0.4" stroke-width="2" fill="none">
+      <line x1="20" y1="60" x2="480" y2="60"/>
+    </g>
+    <g stroke="#EAF6F1" stroke-opacity="0.6" stroke-width="3" stroke-linecap="round">
+      <line x1="50" y1="30" x2="80" y2="90"/>
+      <line x1="95" y1="30" x2="125" y2="90"/>
+      <line x1="140" y1="30" x2="170" y2="90"/>
+    </g>
+    <g fill="#DE7455">
+      <circle cx="300" cy="60" r="7"/>
+      <circle cx="340" cy="60" r="7"/>
+      <circle cx="380" cy="60" r="7"/>
+      <circle cx="420" cy="60" r="7"/>
+      <circle cx="460" cy="60" r="7"/>
+    </g>
+  </svg>
+  <div class="hero-photo">
+    <img src="assets/img/product-hero.png" alt="嘉茵頤縫產品實拍照（去背）">
+  </div>
+
+  <div class="grain"></div>
+  <div class="slide-inner">
+    <div class="kicker">「嘉茵頤縫」</div>
+    <h1>一次性可吸收釘<br><em>皮內吻合器</em></h1>
+    <div class="org-row">
+      <div class="field-wrap">
+        <div class="field">主辦單位</div>
+        <div class="val">禮康生物科技有限公司</div>
+      </div>
+      <div class="field-wrap">
+        <div class="field">簡報 · Presenter</div>
+        <div class="val">侯健隆 Stan</div>
+      </div>
+      <div class="field-wrap">
+        <div class="field">場地</div>
+        <div class="val">敏盛醫院 開刀房</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2 — 材質說明 ============ -->
+<section class="slide" id="s2">
+  <svg class="bg-topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#0F5C56" stroke-opacity="0.06" fill="none" stroke-width="1">
+      <path d="M-100,120 C 250,60 400,180 760,110 S 1300,40 1600,110"/>
+      <path d="M-100,60 C 250,0 400,120 760,50 S 1300,-20 1600,50"/>
+    </g>
+  </svg>
+  <div class="slide-inner">
+    <div class="eyebrow">Material · 01</div>
+    <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem); margin-bottom:.9em;">材質說明</h2>
+    <div class="grid-2">
+      <div>
+        <p class="lead">聚乳酸-乙醇酸共聚物，通常稱為 <b style="color:var(--teal-800)">PLGA</b>，是一種生物可降解的高分子材料，由乳酸與乙醇酸兩種單體組成。具備良好的生物相容性與可控的降解速率，於醫療領域應用廣泛，如醫用縫合線。</p>
+        <div class="info-card">
+          <h3>關於 CAS 編號</h3>
+          <p>在材料科學領域，CAS 通常指 CAS Registry Number。編號目的是為了方便資料庫檢索，並避免化學物質名稱多樣性所帶來的混淆。</p>
+        </div>
+      </div>
+      <table class="compare">
+        <caption>材料對比 — Vicryl 縫線 ／ 皮內吻合釘</caption>
+        <thead>
+          <tr><th>項目</th><th>Vicryl 可吸收縫線</th><th>一次性可吸收皮內吻合釘</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>材料名稱</th><td>聚乳酸-乙醇酸共聚物 (PLGA)</td><td class="hl">聚乳酸-乙醇酸共聚物 (PLGA)</td></tr>
+          <tr><th>組成</th><td>90% 乳酸、10% 乙醇酸</td><td class="hl">40% 乳酸、60% 乙醇酸</td></tr>
+          <tr><th>分子式</th><td>(C₆H₈O₄)m (C₄H₄O₄)n</td><td class="hl">(C₆H₈O₄)m (C₄H₄O₄)n</td></tr>
+          <tr><th>CAS</th><td>26780-50-7</td><td class="hl">26780-50-7</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footer-index">02 / 10</div>
+</section>
+
+<!-- ============ SLIDE 3 — 效益比較 ============ -->
+<section class="slide" id="s3">
+  <div class="slide-inner">
+    <div class="eyebrow">Advantages · 02</div>
+    <h2 style="font-size:clamp(1.7rem,3.2vw,2.5rem); max-width:20ch;">可吸收皮內吻合釘 vs 可吸收縫線</h2>
+    <div class="benefit-list">
+      <div class="benefit wide">
+        <div class="thumb contain"><img src="assets/img/compare-full.jpg" alt="皮內吻合釘與可吸收縫線表面比較"></div>
+        <div>
+          <h3>1 · 降低感染</h3>
+          <p>可吸收縫線為多股編織，表面積大且粗糙，容易附著細菌，導致感染風險；縫線於真皮層縫合亦容易造成組織「切割」，可能導致紅斑與炎症增加。可吸收釘表面光滑，可避免上述縫線的弊端。</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="thumb contain"><img src="assets/img/staple-size.jpg" alt="皮內吻合釘尺寸示意"></div>
+        <div>
+          <h3>2 · 異物感刺激小</h3>
+          <p>光滑表面設計大幅降低組織異物感，減少術後不適，提升病患恢復期間的整體舒適度。</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="thumb contain"><img src="assets/img/product-hero.png" alt="嘉茵頤縫產品實拍（去背）"></div>
+        <div>
+          <h3>3 · 可縫合長度</h3>
+          <p>單組總長 <b style="color:var(--coral);">21cm</b>，總共 30 根皮內釘，足以應對多數臨床縫合情境。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">03 / 10</div>
+</section>
+
+<!-- ============ SLIDE 4 — 操作原理 ============ -->
+<section class="slide" id="s4">
+  <div class="slide-inner">
+    <div class="video-layout">
+      <div>
+        <div class="step-index">01</div>
+        <div class="eyebrow">Mechanism</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">操作原理</h2>
+        <p class="lead" style="margin-top:.8em;">透過吻合器將可吸收釘精準植入真皮層，取代傳統縫線的貫穿式縫合，完整示範吻合器的作用機制。</p>
+        <span class="caption-tag">示範影片 · 操作原理</span>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/img/posters/principle.jpg" playsinline>
+          <source src="assets/video/procedure-principle.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">04 / 10</div>
+</section>
+
+<!-- ============ SLIDE 5 — 標準操作 ============ -->
+<section class="slide" id="s5">
+  <div class="slide-inner">
+    <div class="video-layout reverse">
+      <div>
+        <div class="step-index">02</div>
+        <div class="eyebrow">Standard Procedure</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">標準操作</h2>
+        <p class="lead" style="margin-top:.8em;">依循標準作業流程逐一植入皮內釘，維持等距、對稱，確保傷口張力均勻分佈。</p>
+        <span class="caption-tag">示範影片 · 標準操作</span>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/img/posters/standard.jpg" playsinline>
+          <source src="assets/video/standard-operation.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">05 / 10</div>
+</section>
+
+<!-- ============ SLIDE 6 — 臨床實例 ============ -->
+<section class="slide" id="s6">
+  <div class="slide-inner">
+    <div class="video-layout">
+      <div>
+        <div class="step-index">03</div>
+        <div class="eyebrow">Clinical Case</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">臨床實例</h2>
+        <p class="lead" style="margin-top:.8em;">實際手術現場應用案例，呈現皮內吻合釘於真實傷口縫合中的操作情形與術後外觀。</p>
+        <span class="caption-tag">示範影片 · 臨床實例</span>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/img/posters/clinical.jpg" playsinline>
+          <source src="assets/video/clinical-case.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">06 / 10</div>
+</section>
+
+<!-- ============ SLIDE 7 — 較長傷口縫合 ============ -->
+<section class="slide" id="s7">
+  <div class="slide-inner">
+    <div class="video-layout reverse">
+      <div>
+        <div class="step-index">04</div>
+        <div class="eyebrow">Extended Wound Closure</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">較長傷口縫合</h2>
+        <p class="lead" style="margin-top:.8em;">針對較長傷口的分段植入策略，維持縫合線張力一致，兼顧效率與美觀。</p>
+        <span class="caption-tag">示範影片 · 較長傷口縫合</span>
+      </div>
+      <div class="video-frame portrait">
+        <video controls preload="metadata" poster="assets/img/posters/longer.jpg" playsinline>
+          <source src="assets/video/longer-wound.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">07 / 10</div>
+</section>
+
+<!-- ============ SLIDE 8 — 禁忌症 ============ -->
+<section class="slide" id="s8">
+  <div class="slide-inner">
+    <div class="eyebrow">Contraindications · 03</div>
+    <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);">禁忌症</h2>
+    <p class="lead" style="margin-top:.6em;">以下情況不適用：</p>
+    <div class="contra-grid">
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>縫合中對組織<b>過度拉伸</b>的情況</p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>皮膚組織<b>過薄或過厚</b></p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>需要 <b>X 線輻射不穿透</b> 的情形（如可吸收釘用於定位診斷時，不適合使用）</p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p><b>真皮以外</b>的其他組織</p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>縫合<b>不平坦區域</b></p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>不能用於<b>三級感染切口</b></p></div>
+      <div class="contra-item" style="grid-column:1/-1;"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>不能在<b>疤痕組織</b>上使用</p></div>
+    </div>
+    <p class="contra-note">主要原因為疤痕組織中的膠原纖維，功能質量通常較為低劣；剔除疤痕後，可使用。</p>
+  </div>
+  <div class="footer-index">08 / 10</div>
+</section>
+
+<!-- ============ SLIDE 9 — 總結 ============ -->
+<section class="slide" id="s9">
+  <div class="s9-bg-photo"><img src="assets/img/product-hero.png" alt=""></div>
+  <div class="slide-inner">
+    <div class="s9-head">
+      <div class="eyebrow">Summary · 04</div>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);">總結</h2>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="tag"><span class="circ">1</span>臨床效益</div>
+        <ul>
+          <li>縫合速度快、縮短手術時間</li>
+          <li>感染率低、顯著減少瘢痕形成</li>
+          <li>提升術後傷口美觀度</li>
+        </ul>
+      </div>
+      <div class="summary-card">
+        <div class="tag"><span class="circ">2</span>病患體驗</div>
+        <ul>
+          <li>無需拆線，無外露縫線</li>
+          <li>疼痛感降低，恢復日常活動更快</li>
+          <li>傷口美觀，病人滿意度提升</li>
+        </ul>
+      </div>
+      <div class="summary-card">
+        <div class="tag"><span class="circ">3</span>醫療端優勢</div>
+        <ul>
+          <li>縮短手術時間與減少併發症</li>
+          <li>進而降低綜合醫療成本</li>
+        </ul>
+      </div>
+    </div>
+    <div class="feature-row">
+      <span>植入於真皮層</span>
+      <span>免拆釘</span>
+      <span>操作簡單</span>
+      <span>傷口美觀</span>
+      <span>避免針刺風險</span>
+      <span>共 30 根釘（約 21cm 傷口）</span>
+    </div>
+  </div>
+  <div class="footer-index">09 / 10</div>
+</section>
+
+<!-- ============ SLIDE 10 — Thank You ============ -->
+<section class="slide dark" id="s10">
+  <svg class="bg-topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#EAF6F1" stroke-opacity="0.14" fill="none" stroke-width="1">
+      <path d="M-100,700 C 250,600 400,780 760,650 S 1300,520 1600,600"/>
+      <path d="M-100,780 C 250,680 400,860 760,730 S 1300,600 1600,680"/>
+    </g>
+    <circle cx="220" cy="160" r="220" fill="#1F9484" opacity="0.2"/>
+  </svg>
+  <div class="grain"></div>
+  <div class="slide-inner">
+    <div class="eyebrow" style="justify-content:center;">「嘉茵頤縫」一次性可吸收釘皮內吻合器</div>
+    <h2>Thank You！</h2>
+    <p class="sub">感謝敏盛醫院開刀房團隊撥冗聆聽</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+  const dots = document.querySelectorAll('.nav-dots a');
+  const slides = document.querySelectorAll('.slide');
+  const progressBar = document.getElementById('progressBar');
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id = e.target.id;
+        dots.forEach(d=> d.classList.toggle('active', d.getAttribute('href') === '#'+id));
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s=> io.observe(s));
+
+  function updateProgress(){
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop/docHeight)*100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive:true });
+  updateProgress();
+
+  // keyboard navigation between slides
+  const slideArr = Array.from(slides);
+  window.addEventListener('keydown', (e)=>{
+    if(!['ArrowDown','ArrowUp','PageDown','PageUp'].includes(e.key)) return;
+    e.preventDefault();
+    const mid = window.scrollY + window.innerHeight/2;
+    let idx = slideArr.findIndex(s => s.offsetTop <= mid && s.offsetTop + s.offsetHeight > mid);
+    if(idx < 0) idx = 0;
+    if(e.key==='ArrowDown' || e.key==='PageDown') idx = Math.min(idx+1, slideArr.length-1);
+    if(e.key==='ArrowUp' || e.key==='PageUp') idx = Math.max(idx-1, 0);
+    slideArr[idx].scrollIntoView({ behavior:'smooth' });
+  });
+</script>
+</body>
+</html>
