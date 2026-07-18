@@ -135,7 +135,13 @@
     filter: drop-shadow(0 30px 40px rgba(0,0,0,.45));
   }
   #s1 .hero-photo img{ width:100%; display:block; }
-  @media (max-width:900px){ #s1 .hero-photo{ display:none; } #s1 .hero-motif-line{ display:none; } }
+  @media (max-width:900px){
+    #s1 .hero-motif-line{ display:none; }
+    #s1{ padding-top:9vh; }
+    #s1 .hero-photo{
+      position:static; transform:none; margin:0 auto 2.2em; width:min(62vw,280px);
+    }
+  }
 
   /* ================= SLIDE 2 — 材質說明 ================= */
   .grid-2{ display:grid; grid-template-columns: .92fr 1.3fr; gap: 4.5vw; align-items:start; }
@@ -311,20 +317,6 @@
   <div class="slide-inner">
     <div class="kicker">「嘉茵頤縫」</div>
     <h1>一次性可吸收釘<br><em>皮內吻合器</em></h1>
-    <div class="org-row">
-      <div class="field-wrap">
-        <div class="field">主辦單位</div>
-        <div class="val">禮康生物科技有限公司</div>
-      </div>
-      <div class="field-wrap">
-        <div class="field">簡報 · Presenter</div>
-        <div class="val">侯健隆 Stan</div>
-      </div>
-      <div class="field-wrap">
-        <div class="field">場地</div>
-        <div class="val">敏盛醫院 開刀房</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -558,7 +550,6 @@
   <div class="slide-inner">
     <div class="eyebrow" style="justify-content:center;">「嘉茵頤縫」一次性可吸收釘皮內吻合器</div>
     <h2>Thank You！</h2>
-    <p class="sub">感謝敏盛醫院開刀房團隊撥冗聆聽</p>
   </div>
 </section>
 
